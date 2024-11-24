@@ -1,8 +1,6 @@
 import { FC, useMemo, useState } from 'react';
 import { JsonForms } from '@jsonforms/react';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { Button, Typography, Grid2 } from '@mui/material';
 import {
   materialCells,
   materialRenderers,
@@ -60,12 +58,12 @@ export const JsonFormsDemo: FC = () => {
     setData({});
   };
   return (
-    <Grid
+    <Grid2
       container
       justifyContent={'center'}
       spacing={1}
       style={classes.container}>
-      <Grid item sm={6}>
+      <Grid2 size={{ sm: 6 }}>
         <Typography variant={'h4'}>Bound data</Typography>
         <div style={classes.dataContent}>
           <pre id="boundData">{stringifiedData}</pre>
@@ -78,8 +76,8 @@ export const JsonFormsDemo: FC = () => {
           data-testid="clear-data">
           Clear data
         </Button>
-      </Grid>
-      <Grid item sm={6}>
+      </Grid2>
+      <Grid2 size={{ sm: 6 }}>
         <Typography variant={'h4'}>Rendered form</Typography>
         <div style={classes.demoform}>
           <JsonForms
@@ -91,7 +89,7 @@ export const JsonFormsDemo: FC = () => {
             onChange={({ data }) => setData(data)}
           />
         </div>
-      </Grid>
-    </Grid>
+      </Grid2>
+    </Grid2>
   );
 };
